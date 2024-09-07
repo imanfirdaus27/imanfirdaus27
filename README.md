@@ -1,8 +1,8 @@
 ## Hi there 👋
 
-- 😄 I'm Iman Firdaus
-- ⚡ Interested in Data Sciences, Data Analytics and Machine Learning
-- 👯 Graduated in Aerospace Engineering from IIUM
+- I'm Iman Firdaus
+- Interested in Data Sciences, Data Analytics and Machine Learning
+- Graduated in Aerospace Engineering from IIUM
 
 <!--
 **imanfirdaus27/imanfirdaus27** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
