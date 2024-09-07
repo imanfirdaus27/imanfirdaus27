@@ -2,7 +2,6 @@
 
 - 😄 I'm Iman Firdaus
 - ⚡ Interested in Data Sciences, Data Analytics and Machine Learning
-- 🌱 I’m currently transitioning from aerospace engineering to data analytics and data science
 - 👯 Graduated in Aerospace Engineering from IIUM
 
 <!--
