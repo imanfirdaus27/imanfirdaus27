@@ -3,11 +3,13 @@
 # A repo named exactly after your username is special: its README.md is what
 # people see when they open github.com/imanfirdaus27
 #
-# 1. Create a repo on github.com named EXACTLY:  imanfirdaus27
-#    Public. Tick "Add a README file" if you like — this script overwrites it.
-# 2. Run this from this folder in PowerShell:
+# Run from this folder in PowerShell:
 #       cd "C:\Users\firda\Desktop\Master\github-profile"
 #       .\push_profile.ps1
+#
+# NOTE: the repo already had an old README from 2023. This script merges the
+# remote history in but keeps THIS folder's README as the winner (-X ours),
+# so the old commits stay in the log and the new page is what shows.
 
 param([string]$RepoUrl = "https://github.com/imanfirdaus27/imanfirdaus27.git")
 
@@ -26,6 +28,12 @@ if (-not (git remote | Select-String -Quiet "origin")) {
     git remote set-url origin $RepoUrl
 }
 
+# If a previous run left a conflicted merge behind, clear it first.
+if (Test-Path ".git\MERGE_HEAD") {
+    Write-Host "Clearing an unfinished merge from a previous run..." -ForegroundColor Yellow
+    git merge --abort
+}
+
 git add -A
 $pending = git status --porcelain
 if (-not [string]::IsNullOrWhiteSpace($pending)) {
@@ -36,7 +44,8 @@ git branch -M main
 git fetch origin
 $remoteMain = git ls-remote --heads origin main
 if (-not [string]::IsNullOrWhiteSpace($remoteMain)) {
-    git pull origin main --allow-unrelated-histories --no-rebase --no-edit
+    Write-Host "Merging the existing repo history (keeping this folder's README)..." -ForegroundColor Cyan
+    git pull origin main --allow-unrelated-histories --no-rebase --no-edit -X ours
 }
 
 git push -u origin main
