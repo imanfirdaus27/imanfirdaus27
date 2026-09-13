@@ -2,7 +2,7 @@
 
 # Muhammad Iman Firdaus Bin Md Rostan
 
-**Data Analyst · Power BI · SQL · Python · Machine Learning · Automation**
+**Data Scientist · Data Analyst · Power BI · SQL · Python · Machine Learning · Automation**
 
 Two years turning operational data into decisions that leadership acts on,
 while completing a Master of Technology in Data Science and Analytics.
